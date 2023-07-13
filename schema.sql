@@ -8,3 +8,17 @@ CREATE TABLE animals (
     neutered BOOLEAN,
     weight_kg DECIMAL
 );
+
+-- Alter animals table to add species column
+    ALTER TABLE animals
+    ADD COLUMN species text;
+
+-- Update species column to digimon for all animals that have a name ending in mon
+    UPDATE animals
+    SET species = 'digimon'
+    WHERE name LIKE '%mon';
+
+-- Update species to pokemon if not already assigned a species
+    UPDATE animals
+    SET species = 'pokemon'
+    WHERE species IS NULL;
