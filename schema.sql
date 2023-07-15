@@ -1,3 +1,5 @@
+-- schema.sql is a file that contains the schema of the database.
+
 /* Database schema to keep the structure of entire database. */
 
 CREATE TABLE animals (
@@ -22,3 +24,28 @@ CREATE TABLE animals (
     UPDATE animals
     SET species = 'pokemon'
     WHERE species IS NULL;
+
+
+-- owners table
+-- Create a table named "owners" to store information about animal owners.
+CREATE TABLE owners (
+    id SERIAL PRIMARY KEY, -- Create an auto-incremented primary key column "id".
+    full_name VARCHAR(100), -- Column to store the full name of the owner.
+    age INTEGER -- Column to store the age of the owner.
+);
+
+-- species table
+-- Create a table named "species" to store information about animal species.
+CREATE TABLE species (
+    id SERIAL PRIMARY KEY, -- Create an auto-incremented primary key column "id".
+    name VARCHAR(100) -- Column to store the name of the species.
+);
+
+
+-- animals table
+-- Modify the "animals" table as per the requirements.
+ALTER TABLE animals
+    ADD COLUMN species_id INTEGER REFERENCES species(id),
+    ADD COLUMN owner_id INTEGER REFERENCES owners(id),
+    DROP COLUMN species,
+    ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (PRIMARY KEY);
