@@ -101,8 +101,6 @@ If you like this project feel free to leave a star to show your support.
 
 I would like to give thanks to Microverse for providing an environment that makes me strive to grow as a developer.
 
-Original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
