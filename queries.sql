@@ -1,3 +1,5 @@
+-- queries.sql is a file that contains the queries to be run on the database.
+
 SELECT * FROM animals WHERE name LIKE '%mon';
 SELECT name FROM animals WHERE EXTRACT(year FROM date_of_birth) BETWEEN 2016 AND 2019;
 SELECT * FROM animals WHERE neutered = true AND escape_attempts < 3;
@@ -56,3 +58,49 @@ SELECT species, AVG(escape_attempts) AS avg_escape_attempts
 FROM animals
 WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
 GROUP BY species
+
+
+
+--  --JOIN QUERY
+-- What animals belong to Melody Pond?
+SELECT animl.name
+FROM animals animl
+JOIN owners ownr ON animl.owner_id = ownr.id
+WHERE ownr.full_name = 'Melody Pond';
+
+-- List of all animals that are pokemon (their type is Pokemon).
+SELECT animl.name
+FROM animals animl
+JOIN species sp ON animl.species_id = sp.id
+WHERE sp.name = 'Pokemon';
+
+-- List all owners and their animals, including those who don't own any animal.
+SELECT ownr.full_name, animl.name
+FROM owners ownr
+LEFT JOIN animals animl ON ownr.id = animl.owner_id;
+
+-- How many animals are there per species?
+SELECT sp.name, COUNT(animl.id) AS animal_count
+FROM species sp
+LEFT JOIN animals animl ON sp.id = animl.species_id
+GROUP BY sp.name;
+
+-- List all Digimon owned by Jennifer Orwell.
+SELECT animl.name
+FROM animals animl
+JOIN species sp ON animl.species_id = sp.id
+JOIN owners ownr ON animl.owner_id = ownr.id
+WHERE sp.name = 'Digimon' AND ownr.full_name = 'Jennifer Orwell';
+
+-- List all animals owned by Dean Winchester that haven't tried to escape.
+SELECT animl.name
+FROM animals animl
+JOIN owners ownr ON animl.owner_id = ownr.id
+WHERE ownr.full_name = 'Dean Winchester' AND animl.escape_attempts = 0;
+
+-- Who owns the most animals?
+SELECT ownr.full_name, COUNT(animl.id) AS animal_count
+FROM owners ownr
+JOIN animals animl ON ownr.id = animl.owner_id
+GROUP BY ownr.full_name
+ORDER BY animal_count DESC;
