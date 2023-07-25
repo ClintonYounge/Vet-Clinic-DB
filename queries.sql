@@ -180,3 +180,12 @@ WHERE vets.name = 'Maisy Smith'
 GROUP BY species.name
 ORDER BY COUNT(species.name) DESC
 FETCH FIRST 1 ROW ONLY;
+
+
+-- Performance
+
+EXPLAIN ANALYSE SELECT COUNT(*) FROM visits where animal_id = 4;
+CREATE INDEX animal_visits_idx ON visits(animal_id ASC);
+
+EXPLAIN ANALYSE SELECT * FROM visits where vet_id = 2;
+CREATE INDEX idx_visits_vet_id_covering ON visits (vet_id) INCLUDE (id, animal_id, visit_date);
