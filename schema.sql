@@ -70,3 +70,7 @@ CREATE TABLE visits(
    date_of_visit DATE,
    PRIMARY KEY(id)
 );
+
+CREATE INDEX animal_visits_idx ON visits(animal_id ASC);
+CREATE INDEX idx_visits_vet_id_covering ON visits (vet_id) INCLUDE (id, animal_id, visit_date);
+CREATE INDEX idx_owners_email ON owners (email);
