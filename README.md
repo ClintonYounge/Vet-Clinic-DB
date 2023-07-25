@@ -39,6 +39,8 @@ The site was built with PSQL
 
 - Query animal data
 - Showcase animal data
+- Performance Analysis
+- Indexing
 
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -75,6 +77,12 @@ https://desktop.github.com/
 - Linkedin: [@clinton-younge](https://www.linkedin.com/in/clinton-younge-83386a25a/)
 - Twitter: [@YoungeCjay](https://twitter.com/YoungeCjay)
 
+👤 **Moyasi**
+
+- GitHub: [MoyasiGinko](https://github.com/MoyasiGinko)
+- Twitter: [@Moyasi_Ginko](https://twitter.com/moyasi_ginko)
+- LinkedIn: [Moyasi](https://www.linkedin.com/in/mahmudur-rahman-a8a151257)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
@@ -99,7 +107,7 @@ If you like this project feel free to leave a star to show your support.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to give thanks to Microverse for providing an environment that makes me strive to grow as a developer.
+We would like to give thanks to Microverse for providing an environment that makes me strive to grow as a developer.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

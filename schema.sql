@@ -47,8 +47,7 @@ CREATE TABLE species (
 ALTER TABLE animals
     ADD COLUMN species_id INTEGER REFERENCES species(id),
     ADD COLUMN owner_id INTEGER REFERENCES owners(id),
-    DROP COLUMN species,
-    ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (PRIMARY KEY);
+    DROP COLUMN species;
 
 
 -- JOIN TABLES Entries
@@ -65,7 +64,13 @@ CREATE TABLE specializations(
 );
 
 CREATE TABLE visits(
+    id INT GENERATED ALWAYS AS IDENTITY,
     animal_id INT REFERENCES animals(id),
     vet_id INT REFERENCES vets(id),
-    visit_date DATE
+   date_of_visit DATE,
+   PRIMARY KEY(id)
 );
+
+CREATE INDEX animal_visits_idx ON visits(animal_id ASC);
+CREATE INDEX idx_visits_vet_id_covering ON visits (vet_id) INCLUDE (id, animal_id, visit_date);
+CREATE INDEX idx_owners_email ON owners (email);
