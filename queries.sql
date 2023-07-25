@@ -189,3 +189,6 @@ CREATE INDEX animal_visits_idx ON visits(animal_id ASC);
 
 EXPLAIN ANALYSE SELECT * FROM visits where vet_id = 2;
 CREATE INDEX idx_visits_vet_id_covering ON visits (vet_id) INCLUDE (id, animal_id, visit_date);
+
+EXPLAIN ANALYSE SELECT * FROM owners where email = 'owner_18327@mail.com';
+CREATE INDEX idx_owners_email ON owners (email);
