@@ -40,6 +40,7 @@ The site was built with PSQL
 - Query animal data
 - Showcase animal data
 - Performance Analysis
+- Indexing
 
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -106,7 +107,7 @@ If you like this project feel free to leave a star to show your support.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to give thanks to Microverse for providing an environment that makes me strive to grow as a developer.
+We would like to give thanks to Microverse for providing an environment that makes me strive to grow as a developer.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
