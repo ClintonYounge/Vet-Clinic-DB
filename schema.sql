@@ -47,8 +47,7 @@ CREATE TABLE species (
 ALTER TABLE animals
     ADD COLUMN species_id INTEGER REFERENCES species(id),
     ADD COLUMN owner_id INTEGER REFERENCES owners(id),
-    DROP COLUMN species,
-    ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (PRIMARY KEY);
+    DROP COLUMN species;
 
 
 -- JOIN TABLES Entries
