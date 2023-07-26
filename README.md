@@ -41,6 +41,7 @@ The site was built with PSQL
 - Showcase animal data
 - Performance Analysis
 - Indexing
+- Schema Diagram created using dbdiagram.io
 
 
 ## 💻 Getting Started <a name="getting-started"></a>

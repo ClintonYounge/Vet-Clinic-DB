@@ -1,0 +1,45 @@
+dbdiagram.io is the site used to generate the diagram. 
+
+Below is the refactored code to generate the diagram
+
+Table owners {
+  id INT [primary key]
+  full_name VARCHAR (20)
+  age INT
+}
+
+Table species {
+  id INT [primary key]
+  name VARCHAR (20)
+}
+
+Table animals {
+  id INT [primary key]
+  name VARCHAR (20)
+  date_of_birth DATE
+  escape_attempts INT
+  neutered BOOLEAN
+  weight_kg DECIMAL
+  species_id INT [ref: > species.id]
+  owner_id INT [ref: > owners.id]
+}
+
+Table vets {
+  id INT [primary key]
+  name VARCHAR (20)
+  age INT
+  date_of_graduation DATE
+}
+
+Table specializations {
+  id INT [primary key]
+  species_id INT [ref: > species.id]
+  vet_id INT [ref: > vets.id]
+}
+
+Table visits {
+  id INT [primary key]
+  animal_id INT [ref: > animals.id]
+  vet_id INT [ref: > vets.id]
+  date_of_visit DATE
+}
